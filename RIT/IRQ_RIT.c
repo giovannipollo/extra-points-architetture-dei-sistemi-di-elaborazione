@@ -58,7 +58,8 @@ void RIT_IRQHandler (void)
 	//inizializzazione cordinate di partenza del giocatore
   static uint8_t player_x; // coordinata delle righe
 	static uint8_t player_y;	// coordinata delle colonne
-									
+  static uint8_t flag_dist_eq0 = 0; 
+	static uint8_t flag_dist_gt0 = 0;
 	//inizializzazione distanza dagli ostacoli																
 	static uint8_t distanza = 0;         
    
@@ -100,7 +101,7 @@ void RIT_IRQHandler (void)
       down=0;           
       disable_RIT();
       reset_RIT();
-      // NVIC_EnableIRQ(EINT0_IRQn);                             /* disable Button interrupts            */
+      NVIC_EnableIRQ(EINT0_IRQn);                             /* disable Button interrupts            */
       LPC_PINCON->PINSEL4    |= (1 << 20);     /* External interrupt 0 pin selection */
     }
   }
@@ -149,13 +150,23 @@ void RIT_IRQHandler (void)
       enable_RIT();
       down2++;
 			distanza = calcola_distanza(direzione, player_x, player_y, map);
-			if(distanza != 0 && uscita == 0)
-				enable_timer(1);
-			else{
-				if(uscita == 0){
-					reset_timer(1);
-					disable_timer(1);
+			if(distanza != 0 && uscita == 0){
+				if(flag_dist_gt0 == 0){
 					LED_Off(5);
+					reset_timer(1);
+					LPC_TIM1->MR0 = 0x00BEBC20;
+					enable_timer(1);
+					flag_dist_gt0 = 1;
+					flag_dist_eq0 = 0;
+				}
+			}
+			else if(uscita == 0){
+				if(flag_dist_eq0 == 0){
+					LED_Off(5);
+					reset_timer(1);
+					LPC_TIM1->MR0 = 0x002625A0;
+					enable_timer(1);
+					flag_dist_eq0 = 1;
 				}
 			}
 			
@@ -340,6 +351,7 @@ void accendi_led(uint8_t distanza){
 						enable_timer(0);
 					
 						if(down2 == 0){ /* Il bottone di running è stato rilasciato */
+							LED_Off(5);
 							reset_timer(1);
 							LPC_TIM1->MR0 = 0x002625A0; /* lampeggio a 5 Hz */
 							enable_timer(1);

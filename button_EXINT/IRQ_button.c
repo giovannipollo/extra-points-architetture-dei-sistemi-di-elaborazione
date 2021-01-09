@@ -26,8 +26,6 @@ void EINT1_IRQHandler (void)	  	/* KEY1	ROTATE													 */
 void EINT2_IRQHandler (void)	  	/* KEY2														 */
 {
 	down2=1;
-	reset_timer(1);
-	LPC_TIM1->MR0 = 0x00BEBC20; /* Valore del match register per lampeggiare ad 1 Hz */
 	enable_RIT();										/* enable RIT to count 50ms				 */
 	NVIC_DisableIRQ(EINT2_IRQn);		/* disable Button interrupts			 */
 	LPC_PINCON->PINSEL4    &= ~(1 << 24);     /* GPIO pin selection */

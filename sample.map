@@ -27,7 +27,6 @@ Section Cross References
     funct_led.o(.text) refers to lib_led.o(.data) for led_value
     lib_led.o(.text) refers to lib_led.o(.data) for led_value
     irq_button.o(.text) refers to lib_rit.o(.text) for enable_RIT
-    irq_button.o(.text) refers to lib_timer.o(.text) for reset_timer
     irq_button.o(.text) refers to irq_rit.o(.data) for down
     irq_rit.o(.text) refers to funct_led.o(.text) for LED_Out
     irq_rit.o(.text) refers to lib_timer.o(.text) for reset_timer
@@ -183,51 +182,51 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      204  startup_lpc17xx.o(RESET)
-    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
     ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
     ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
-    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
     ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
     ../clib/angel/scatter.s                  0x00000000   Number         0  __scatter.o ABSOLUTE
     ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
     ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
-    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
-    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
     ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
-    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
     ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
     ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
-    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
-    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
     ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
     ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
     ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
     ../fplib/fpinit.s                        0x00000000   Number         0  fpinit.o ABSOLUTE
@@ -316,30 +315,32 @@ Image Symbol Table
     .text                                    0x00000300   Section        0  system_lpc17xx.o(.text)
     .text                                    0x0000054c   Section        0  irq_button.o(.text)
     __NVIC_DisableIRQ                        0x0000054d   Thumb Code    30  irq_button.o(.text)
-    .text                                    0x00000624   Section        0  lib_button.o(.text)
-    __NVIC_EnableIRQ                         0x00000625   Thumb Code    34  lib_button.o(.text)
-    __NVIC_SetPriority                       0x00000647   Thumb Code    32  lib_button.o(.text)
-    .text                                    0x000006f8   Section        0  lib_rit.o(.text)
-    .text                                    0x0000078c   Section        0  irq_rit.o(.text)
-    __NVIC_EnableIRQ                         0x0000078d   Thumb Code    34  irq_rit.o(.text)
-    __NVIC_DisableIRQ                        0x000007af   Thumb Code    30  irq_rit.o(.text)
-    __NVIC_ClearPendingIRQ                   0x00000d9f   Thumb Code    22  irq_rit.o(.text)
-    .text                                    0x00000df4   Section        0  irq_timer.o(.text)
-    .text                                    0x00000ee4   Section        0  lib_timer.o(.text)
-    __NVIC_EnableIRQ                         0x00000ee5   Thumb Code    34  lib_timer.o(.text)
-    __NVIC_SetPriority                       0x00000f07   Thumb Code    32  lib_timer.o(.text)
-    .text                                    0x00000fc4   Section       74  sys_stackheap_outer.o(.text)
-    .constdata                               0x00001010   Section       32  funct_led.o(.constdata)
+    .text                                    0x00000610   Section        0  lib_button.o(.text)
+    __NVIC_EnableIRQ                         0x00000611   Thumb Code    34  lib_button.o(.text)
+    __NVIC_SetPriority                       0x00000633   Thumb Code    32  lib_button.o(.text)
+    .text                                    0x000006e4   Section        0  lib_rit.o(.text)
+    .text                                    0x00000778   Section        0  irq_rit.o(.text)
+    __NVIC_EnableIRQ                         0x00000779   Thumb Code    34  irq_rit.o(.text)
+    __NVIC_DisableIRQ                        0x0000079b   Thumb Code    30  irq_rit.o(.text)
+    __NVIC_ClearPendingIRQ                   0x00000dd1   Thumb Code    22  irq_rit.o(.text)
+    .text                                    0x00000e34   Section        0  irq_timer.o(.text)
+    .text                                    0x00000f24   Section        0  lib_timer.o(.text)
+    __NVIC_EnableIRQ                         0x00000f25   Thumb Code    34  lib_timer.o(.text)
+    __NVIC_SetPriority                       0x00000f47   Thumb Code    32  lib_timer.o(.text)
+    .text                                    0x00001004   Section       74  sys_stackheap_outer.o(.text)
+    .constdata                               0x00001050   Section       32  funct_led.o(.constdata)
     STACK                                    0x10000000   Section      512  startup_lpc17xx.o(STACK)
     Stack_Mem                                0x10000000   Data         512  startup_lpc17xx.o(STACK)
     __initial_sp                             0x10000200   Data           0  startup_lpc17xx.o(STACK)
     .data                                    0x2007c000   Section        5  system_lpc17xx.o(.data)
     .data                                    0x2007c005   Section        1  lib_led.o(.data)
-    .data                                    0x2007c006   Section      203  irq_rit.o(.data)
+    .data                                    0x2007c006   Section      205  irq_rit.o(.data)
     map                                      0x2007c00b   Data         195  irq_rit.o(.data)
     player_x                                 0x2007c0ce   Data           1  irq_rit.o(.data)
     player_y                                 0x2007c0cf   Data           1  irq_rit.o(.data)
-    distanza                                 0x2007c0d0   Data           1  irq_rit.o(.data)
+    flag_dist_eq0                            0x2007c0d0   Data           1  irq_rit.o(.data)
+    flag_dist_gt0                            0x2007c0d1   Data           1  irq_rit.o(.data)
+    distanza                                 0x2007c0d2   Data           1  irq_rit.o(.data)
     .bss                                     0x2007c0d4   Section       96  libspace.o(.bss)
     HEAP                                     0x2007c138   Section        0  startup_lpc17xx.o(HEAP)
     Heap_Mem                                 0x2007c138   Data           0  startup_lpc17xx.o(HEAP)
@@ -489,27 +490,27 @@ Image Symbol Table
     SystemInit                               0x00000301   Thumb Code   552  system_lpc17xx.o(.text)
     EINT0_IRQHandler                         0x0000056b   Thumb Code    46  irq_button.o(.text)
     EINT1_IRQHandler                         0x00000599   Thumb Code    46  irq_button.o(.text)
-    EINT2_IRQHandler                         0x000005c7   Thumb Code    56  irq_button.o(.text)
-    BUTTON_init                              0x00000667   Thumb Code   124  lib_button.o(.text)
-    enable_RIT                               0x000006f9   Thumb Code    14  lib_rit.o(.text)
-    disable_RIT                              0x00000707   Thumb Code    14  lib_rit.o(.text)
-    reset_RIT                                0x00000715   Thumb Code     8  lib_rit.o(.text)
-    init_RIT                                 0x0000071d   Thumb Code    98  lib_rit.o(.text)
-    accendi_direzione                        0x000007cd   Thumb Code    52  irq_rit.o(.text)
-    accendi_led                              0x00000801   Thumb Code   212  irq_rit.o(.text)
-    calcola_distanza                         0x000008d5   Thumb Code   356  irq_rit.o(.text)
-    muovi                                    0x00000a39   Thumb Code    52  irq_rit.o(.text)
-    RIT_IRQHandler                           0x00000a6d   Thumb Code   818  irq_rit.o(.text)
-    TIMER0_IRQHandler                        0x00000df5   Thumb Code   146  irq_timer.o(.text)
-    TIMER1_IRQHandler                        0x00000e87   Thumb Code    78  irq_timer.o(.text)
-    enable_timer                             0x00000f27   Thumb Code    20  lib_timer.o(.text)
-    disable_timer                            0x00000f3b   Thumb Code    20  lib_timer.o(.text)
-    reset_timer                              0x00000f4f   Thumb Code    30  lib_timer.o(.text)
-    init_timer                               0x00000f6d   Thumb Code    76  lib_timer.o(.text)
-    __user_setup_stackheap                   0x00000fc5   Thumb Code    74  sys_stackheap_outer.o(.text)
-    led_mask                                 0x00001010   Data          32  funct_led.o(.constdata)
-    Region$$Table$$Base                      0x00001030   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00001060   Number         0  anon$$obj.o(Region$$Table)
+    EINT2_IRQHandler                         0x000005c7   Thumb Code    46  irq_button.o(.text)
+    BUTTON_init                              0x00000653   Thumb Code   124  lib_button.o(.text)
+    enable_RIT                               0x000006e5   Thumb Code    14  lib_rit.o(.text)
+    disable_RIT                              0x000006f3   Thumb Code    14  lib_rit.o(.text)
+    reset_RIT                                0x00000701   Thumb Code     8  lib_rit.o(.text)
+    init_RIT                                 0x00000709   Thumb Code    98  lib_rit.o(.text)
+    accendi_direzione                        0x000007b9   Thumb Code    52  irq_rit.o(.text)
+    accendi_led                              0x000007ed   Thumb Code   218  irq_rit.o(.text)
+    calcola_distanza                         0x000008c7   Thumb Code   356  irq_rit.o(.text)
+    muovi                                    0x00000a2b   Thumb Code    52  irq_rit.o(.text)
+    RIT_IRQHandler                           0x00000a5f   Thumb Code   882  irq_rit.o(.text)
+    TIMER0_IRQHandler                        0x00000e35   Thumb Code   146  irq_timer.o(.text)
+    TIMER1_IRQHandler                        0x00000ec7   Thumb Code    78  irq_timer.o(.text)
+    enable_timer                             0x00000f67   Thumb Code    20  lib_timer.o(.text)
+    disable_timer                            0x00000f7b   Thumb Code    20  lib_timer.o(.text)
+    reset_timer                              0x00000f8f   Thumb Code    30  lib_timer.o(.text)
+    init_timer                               0x00000fad   Thumb Code    76  lib_timer.o(.text)
+    __user_setup_stackheap                   0x00001005   Thumb Code    74  sys_stackheap_outer.o(.text)
+    led_mask                                 0x00001050   Data          32  funct_led.o(.constdata)
+    Region$$Table$$Base                      0x00001070   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000010a0   Number         0  anon$$obj.o(Region$$Table)
     SystemFrequency                          0x2007c000   Data           4  system_lpc17xx.o(.data)
     ScaleFlag                                0x2007c004   Data           1  system_lpc17xx.o(.data)
     led_value                                0x2007c005   Data           1  lib_led.o(.data)
@@ -529,9 +530,9 @@ Memory Map of the image
 
   Image Entry point : 0x000000cd
 
-  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00001134, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00001174, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001060, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000010a0, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -597,35 +598,35 @@ Memory Map of the image
     0x000002fa   0x000002fa   0x00000002   PAD
     0x000002fc   0x000002fc   0x00000004   Code   RO            4    .ARM.__at_0x02FC    startup_lpc17xx.o
     0x00000300   0x00000300   0x0000024c   Code   RO           88    .text               system_lpc17xx.o
-    0x0000054c   0x0000054c   0x000000d8   Code   RO          184    .text               irq_button.o
-    0x00000624   0x00000624   0x000000d4   Code   RO          219    .text               lib_button.o
-    0x000006f8   0x000006f8   0x00000094   Code   RO          247    .text               lib_rit.o
-    0x0000078c   0x0000078c   0x00000668   Code   RO          278    .text               irq_rit.o
-    0x00000df4   0x00000df4   0x000000f0   Code   RO          312    .text               irq_timer.o
-    0x00000ee4   0x00000ee4   0x000000e0   Code   RO          340    .text               lib_timer.o
-    0x00000fc4   0x00000fc4   0x0000004a   Code   RO          383    .text               c_w.l(sys_stackheap_outer.o)
-    0x0000100e   0x0000100e   0x00000002   PAD
-    0x00001010   0x00001010   0x00000020   Data   RO          123    .constdata          funct_led.o
-    0x00001030   0x00001030   0x00000030   Data   RO          522    Region$$Table       anon$$obj.o
+    0x0000054c   0x0000054c   0x000000c4   Code   RO          184    .text               irq_button.o
+    0x00000610   0x00000610   0x000000d4   Code   RO          219    .text               lib_button.o
+    0x000006e4   0x000006e4   0x00000094   Code   RO          247    .text               lib_rit.o
+    0x00000778   0x00000778   0x000006bc   Code   RO          278    .text               irq_rit.o
+    0x00000e34   0x00000e34   0x000000f0   Code   RO          312    .text               irq_timer.o
+    0x00000f24   0x00000f24   0x000000e0   Code   RO          340    .text               lib_timer.o
+    0x00001004   0x00001004   0x0000004a   Code   RO          383    .text               c_w.l(sys_stackheap_outer.o)
+    0x0000104e   0x0000104e   0x00000002   PAD
+    0x00001050   0x00001050   0x00000020   Data   RO          123    .constdata          funct_led.o
+    0x00001070   0x00001070   0x00000030   Data   RO          522    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x10000000, Load base: 0x00001060, Size: 0x00000200, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x10000000, Load base: 0x000010a0, Size: 0x00000200, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x10000000        -       0x00000200   Zero   RW            1    STACK               startup_lpc17xx.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x2007c000, Load base: 0x00001060, Size: 0x00000138, Max: 0x00008000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x2007c000, Load base: 0x000010a0, Size: 0x00000138, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2007c000   0x00001060   0x00000005   Data   RW           89    .data               system_lpc17xx.o
-    0x2007c005   0x00001065   0x00000001   Data   RW          158    .data               lib_led.o
-    0x2007c006   0x00001066   0x000000cb   Data   RW          279    .data               irq_rit.o
-    0x2007c0d1   0x00001131   0x00000003   PAD
+    0x2007c000   0x000010a0   0x00000005   Data   RW           89    .data               system_lpc17xx.o
+    0x2007c005   0x000010a5   0x00000001   Data   RW          158    .data               lib_led.o
+    0x2007c006   0x000010a6   0x000000cd   Data   RW          279    .data               irq_rit.o
+    0x2007c0d3   0x00001173   0x00000001   PAD
     0x2007c0d4        -       0x00000060   Zero   RW          394    .bss                c_w.l(libspace.o)
-    0x2007c134   0x00001131   0x00000004   PAD
+    0x2007c134   0x00001173   0x00000004   PAD
     0x2007c138        -       0x00000000   Zero   RW            2    HEAP                startup_lpc17xx.o
 
 
@@ -636,22 +637,22 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       108         14         32          0          0      18648   funct_led.o
-       216         38          0          0          0       1097   irq_button.o
-      1640        138          0        203          0      30297   irq_rit.o
-       240         16          0          0          0        798   irq_timer.o
-       212         22          0          0          0       1038   lib_button.o
-        64         14          0          1          0        950   lib_led.o
-       148         14          0          0          0      27579   lib_rit.o
-       224         12          0          0          0       1708   lib_timer.o
-       132         20          0          0          0      22095   sample.o
-        56         22        204          0        512       1224   startup_lpc17xx.o
-       588         36          0          5          0       1129   system_lpc17xx.o
+       108         14         32          0          0      18296   funct_led.o
+       196         28          0          0          0        973   irq_button.o
+      1724        152          0        205          0      30049   irq_rit.o
+       240         16          0          0          0        682   irq_timer.o
+       212         22          0          0          0        918   lib_button.o
+        64         14          0          1          0        718   lib_led.o
+       148         14          0          0          0      27463   lib_rit.o
+       224         12          0          0          0       1588   lib_timer.o
+       132         20          0          0          0      21979   sample.o
+        56         22        204          0        512        996   startup_lpc17xx.o
+       588         36          0          5          0        893   system_lpc17xx.o
 
     ----------------------------------------------------------------------
-      3628        346        284        212        512     106563   Object Totals
+      3692        350        284        212        512     104555   Object Totals
          0          0         48          0          0          0   (incl. Generated)
-         0          0          0          3          0          0   (incl. Padding)
+         0          0          0          1          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -698,15 +699,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3908        362        284        212        612     106467   Grand Totals
-      3908        362        284        212        612     106467   ELF Image Totals
-      3908        362        284        212          0          0   ROM Totals
+      3972        366        284        212        612     104459   Grand Totals
+      3972        366        284        212        612     104459   ELF Image Totals
+      3972        366        284        212          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4192 (   4.09kB)
+    Total RO  Size (Code + RO Data)                 4256 (   4.16kB)
     Total RW  Size (RW Data + ZI Data)               824 (   0.80kB)
-    Total ROM Size (Code + RO Data + RW Data)       4404 (   4.30kB)
+    Total ROM Size (Code + RO Data + RW Data)       4468 (   4.36kB)
 
 ==============================================================================
 

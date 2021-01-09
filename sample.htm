@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Jan 08 21:51:50 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Jan 09 11:28:32 2021
 <BR><P>
 <H3>Maximum Stack Usage =         32 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -403,7 +403,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
 <LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
 </UL>
 
@@ -415,7 +415,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
 </UL>
 
 <P><STRONG><a name="[42]"></a>LED_init</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, lib_led.o(.text))
@@ -477,11 +477,10 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
-<P><STRONG><a name="[21]"></a>EINT2_IRQHandler</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, irq_button.o(.text))
+<P><STRONG><a name="[21]"></a>EINT2_IRQHandler</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, irq_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EINT2_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
@@ -489,8 +488,8 @@ Global Symbols
 <P><STRONG><a name="[43]"></a>BUTTON_init</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, lib_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = BUTTON_init &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -514,21 +513,21 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[50]"></a>accendi_direzione</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, irq_rit.o(.text))
+<P><STRONG><a name="[4f]"></a>accendi_direzione</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, irq_rit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = accendi_direzione &rArr; LED_Out
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
 </UL>
-<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
 </UL>
 
-<P><STRONG><a name="[51]"></a>accendi_led</STRONG> (Thumb, 212 bytes, Stack size 8 bytes, irq_rit.o(.text))
+<P><STRONG><a name="[50]"></a>accendi_led</STRONG> (Thumb, 218 bytes, Stack size 8 bytes, irq_rit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = accendi_led &rArr; accendi_direzione &rArr; LED_Out
 </UL>
-<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
+<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_timer
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
@@ -544,20 +543,20 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[2a]"></a>RIT_IRQHandler</STRONG> (Thumb, 818 bytes, Stack size 8 bytes, irq_rit.o(.text))
+<P><STRONG><a name="[2a]"></a>RIT_IRQHandler</STRONG> (Thumb, 882 bytes, Stack size 8 bytes, irq_rit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = RIT_IRQHandler &rArr; accendi_led &rArr; accendi_direzione &rArr; LED_Out
 </UL>
-<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
+<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_timer
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
 <LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
@@ -583,18 +582,17 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[52]"></a>enable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
 </UL>
 
 <P><STRONG><a name="[53]"></a>disable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
 </UL>
 
-<P><STRONG><a name="[4d]"></a>reset_timer</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lib_timer.o(.text))
+<P><STRONG><a name="[51]"></a>reset_timer</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lib_timer.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
-<LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EINT2_IRQHandler
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
 </UL>
 
 <P><STRONG><a name="[46]"></a>init_timer</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, lib_timer.o(.text))
@@ -629,11 +627,11 @@ Local Symbols
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EINT0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[4e]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lib_button.o(.text))
+<P><STRONG><a name="[4d]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lib_button.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_init
 </UL>
 
-<P><STRONG><a name="[4f]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lib_button.o(.text))
+<P><STRONG><a name="[4e]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lib_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_init
