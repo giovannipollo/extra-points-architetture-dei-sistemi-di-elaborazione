@@ -32,7 +32,8 @@ void RIT_IRQHandler (void)
   LPC_RIT->RICTRL |= 0x1;	/* clear interrupt flag */
 	disable_RIT();
 	reset_RIT();
-	enable_RIT();
+	if(vittoria == 0)
+		enable_RIT();
   return;
 }
 

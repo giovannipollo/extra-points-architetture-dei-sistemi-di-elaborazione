@@ -46,7 +46,7 @@ void init_game(void){
 	joystick_init();											/* Joystick Initialization            */
 	init_RIT(0x004C4B40);									/* RIT Initialization 50 msec       	*/
 	init_timer(0, 0x4E2 );								/* 500us for the touch panel*/
-	enable_RIT();													/* RIT enabled												*/
+	// enable_RIT();													/* RIT enabled												*/
 	
 	/* Init display*/
 	LCD_Initialization();
@@ -67,6 +67,8 @@ void init_game(void){
 	
 	/* Enable timer */
 	enable_timer(0);
+	start_abilitato = 1;
+	clear_abilitato = 0;
 	
 	LPC_SC->PCON |= 0x1;									/* power-down	mode										*/
 	LPC_SC->PCON &= ~(0x2);						

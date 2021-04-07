@@ -198,6 +198,8 @@ void joystick_sud(void){
 					}
 					if(map[player_x][player_y] == 2){
 						win();
+						disable_RIT();
+						reset_RIT();
 					}
 				}
 			}
@@ -439,6 +441,7 @@ void draw_obstacle(uint8_t offset){
 }
 
 void win(void){
+	start_abilitato = 0;
 	vittoria = 1;
 	disable_RIT();
 	reset_RIT();

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jan 14 19:22:34 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Jan 18 17:11:54 2021
 <BR><P>
 <H3>Maximum Stack Usage =        200 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -12,7 +12,7 @@ __rt_entry_main &rArr; main &rArr; init_game &rArr; TouchPanel_Calibrate &rArr; 
 <H3>
 Functions with no stack information
 </H3><UL>
- <LI><a href="#[7f]">__user_initial_stackheap</a>
+ <LI><a href="#[7e]">__user_initial_stackheap</a>
 </UL>
 </UL>
 <P>
@@ -205,7 +205,7 @@ Global Symbols
 
 <P><STRONG><a name="[ad]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
-<P><STRONG><a name="[4d]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
+<P><STRONG><a name="[7f]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
@@ -385,24 +385,23 @@ Global Symbols
 <P><STRONG><a name="[d]"></a>WDT_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_lpc17xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
-<P><STRONG><a name="[7f]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_lpc17xx.o(.text))
+<P><STRONG><a name="[7e]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_lpc17xx.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[41]"></a>init_game</STRONG> (Thumb, 248 bytes, Stack size 16 bytes, sample.o(.text))
+<P><STRONG><a name="[41]"></a>init_game</STRONG> (Thumb, 256 bytes, Stack size 16 bytes, sample.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = init_game &rArr; TouchPanel_Calibrate &rArr; Read_Ads7846 &rArr; TP_GetAdXY &rArr; Read_Y &rArr; RD_AD &rArr; DelayUS
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_init
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_timer
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_RIT
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Initialization
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Initialization
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -421,45 +420,44 @@ Global Symbols
 
 <P><STRONG><a name="[b1]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[3c]"></a>exit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, exit.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
-<LI>Call Chain = exit
-</UL>
-<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
-</UL>
+<P><STRONG><a name="[b2]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+
+<P><STRONG><a name="[b3]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[42]"></a>SystemInit</STRONG> (Thumb, 552 bytes, Stack size 0 bytes, system_lpc17xx.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[2a]"></a>RIT_IRQHandler</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, irq_rit.o(.text))
+<P><STRONG><a name="[2a]"></a>RIT_IRQHandler</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, irq_rit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = RIT_IRQHandler &rArr; joystick_sud &rArr; win &rArr; GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_select
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
-<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_select
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
-<P><STRONG><a name="[46]"></a>enable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
-</UL>
-
-<P><STRONG><a name="[53]"></a>disable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<P><STRONG><a name="[53]"></a>enable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[54]"></a>reset_RIT</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, lib_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<P><STRONG><a name="[51]"></a>disable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
+<LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+</UL>
+
+<P><STRONG><a name="[52]"></a>reset_RIT</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, lib_rit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
@@ -471,403 +469,417 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[55]"></a>GetASCIICode</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, asciilib.o(.text))
+<P><STRONG><a name="[54]"></a>GetASCIICode</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, asciilib.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GetASCIICode
 </UL>
-<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PutChar
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PutChar
 </UL>
 
-<P><STRONG><a name="[47]"></a>LCD_Initialization</STRONG> (Thumb, 10522 bytes, Stack size 24 bytes, glcd.o(.text))
+<P><STRONG><a name="[46]"></a>LCD_Initialization</STRONG> (Thumb, 10522 bytes, Stack size 24 bytes, glcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LCD_Initialization
 </UL>
-<BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Configuration
+<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Configuration
 </UL>
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[59]"></a>LCD_Clear</STRONG> (Thumb, 1236 bytes, Stack size 16 bytes, glcd.o(.text))
+<P><STRONG><a name="[58]"></a>LCD_Clear</STRONG> (Thumb, 1236 bytes, Stack size 16 bytes, glcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = LCD_Clear &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
+<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
-</UL>
-
-<P><STRONG><a name="[5b]"></a>LCD_GetPoint</STRONG> (Thumb, 956 bytes, Stack size 24 bytes, glcd.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_BGR2RGB
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
+<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
 </UL>
 
-<P><STRONG><a name="[5d]"></a>LCD_SetPoint</STRONG> (Thumb, 172 bytes, Stack size 16 bytes, glcd.o(.text))
+<P><STRONG><a name="[5a]"></a>LCD_GetPoint</STRONG> (Thumb, 956 bytes, Stack size 24 bytes, glcd.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_BGR2RGB
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
+</UL>
+
+<P><STRONG><a name="[5c]"></a>LCD_SetPoint</STRONG> (Thumb, 172 bytes, Stack size 16 bytes, glcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
+<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_DrawPoint
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PutChar
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
+<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_DrawPoint
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PutChar
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
 </UL>
 
-<P><STRONG><a name="[5e]"></a>LCD_DrawLine</STRONG> (Thumb, 250 bytes, Stack size 40 bytes, glcd.o(.text))
+<P><STRONG><a name="[5d]"></a>LCD_DrawLine</STRONG> (Thumb, 250 bytes, Stack size 40 bytes, glcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetPoint
+<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetPoint
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_arrow
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawCross
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_arrow
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawCross
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
 </UL>
 
-<P><STRONG><a name="[4b]"></a>LCD_DrawRectangle</STRONG> (Thumb, 60 bytes, Stack size 32 bytes, glcd.o(.text))
+<P><STRONG><a name="[4a]"></a>LCD_DrawRectangle</STRONG> (Thumb, 60 bytes, Stack size 32 bytes, glcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = LCD_DrawRectangle &rArr; LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[5f]"></a>PutChar</STRONG> (Thumb, 100 bytes, Stack size 56 bytes, glcd.o(.text))
+<P><STRONG><a name="[5e]"></a>PutChar</STRONG> (Thumb, 100 bytes, Stack size 56 bytes, glcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetPoint
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetASCIICode
+<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetPoint
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetASCIICode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
+<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
 </UL>
 
-<P><STRONG><a name="[4a]"></a>GUI_Text</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, glcd.o(.text))
+<P><STRONG><a name="[49]"></a>GUI_Text</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, glcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PutChar
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PutChar
 </UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[e]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 462 bytes, Stack size 24 bytes, irq_timer.o(.text))
+<P><STRONG><a name="[e]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 528 bytes, Stack size 24 bytes, irq_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = TIMER0_IRQHandler &rArr; Read_Ads7846 &rArr; TP_GetAdXY &rArr; Read_Y &rArr; RD_AD &rArr; DelayUS
 </UL>
-<BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
+<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[f]"></a>TIMER1_IRQHandler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, irq_timer.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
-<P><STRONG><a name="[4c]"></a>enable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text))
+<P><STRONG><a name="[4b]"></a>enable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[b2]"></a>disable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text), UNUSED)
+<P><STRONG><a name="[b4]"></a>disable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text), UNUSED)
 
-<P><STRONG><a name="[b3]"></a>reset_timer</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lib_timer.o(.text), UNUSED)
+<P><STRONG><a name="[b5]"></a>reset_timer</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lib_timer.o(.text), UNUSED)
 
 <P><STRONG><a name="[45]"></a>init_timer</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, lib_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = init_timer
 </UL>
-<BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 </UL>
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[65]"></a>LPC17xx_SPI_SetSpeed</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, touchpanel.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADS7843_SPI_Init
+<P><STRONG><a name="[66]"></a>LPC17xx_SPI_SetSpeed</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, touchpanel.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADS7843_SPI_Init
 </UL>
 
-<P><STRONG><a name="[48]"></a>TP_Init</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[47]"></a>TP_Init</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TP_Init &rArr; ADS7843_SPI_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADS7843_SPI_Init
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADS7843_SPI_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[69]"></a>Read_X</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[6a]"></a>Read_X</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Read_X &rArr; RD_AD &rArr; DelayUS
 </UL>
-<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RD_AD
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WR_CMD
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RD_AD
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WR_CMD
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_GetAdXY
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_GetAdXY
 </UL>
 
-<P><STRONG><a name="[6a]"></a>Read_Y</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[6b]"></a>Read_Y</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Read_Y &rArr; RD_AD &rArr; DelayUS
 </UL>
-<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RD_AD
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WR_CMD
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
+<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RD_AD
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WR_CMD
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_GetAdXY
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_GetAdXY
 </UL>
 
-<P><STRONG><a name="[6b]"></a>TP_GetAdXY</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[6c]"></a>TP_GetAdXY</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TP_GetAdXY &rArr; Read_Y &rArr; RD_AD &rArr; DelayUS
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Y
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
+<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Y
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
-</UL>
-
-<P><STRONG><a name="[6c]"></a>TP_DrawPoint</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, touchpanel.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetPoint
+<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
 </UL>
 
-<P><STRONG><a name="[6d]"></a>DrawCross</STRONG> (Thumb, 356 bytes, Stack size 24 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[6d]"></a>TP_DrawPoint</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, touchpanel.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetPoint
+</UL>
+
+<P><STRONG><a name="[6e]"></a>DrawCross</STRONG> (Thumb, 356 bytes, Stack size 24 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = DrawCross &rArr; LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
 </UL>
-<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
+<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
 </UL>
 
-<P><STRONG><a name="[60]"></a>Read_Ads7846</STRONG> (Thumb, 522 bytes, Stack size 112 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[5f]"></a>Read_Ads7846</STRONG> (Thumb, 522 bytes, Stack size 112 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = Read_Ads7846 &rArr; TP_GetAdXY &rArr; Read_Y &rArr; RD_AD &rArr; DelayUS
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_GetAdXY
+<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_GetAdXY
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
 </UL>
 
-<P><STRONG><a name="[6f]"></a>setCalibrationMatrix</STRONG> (Thumb, 356 bytes, Stack size 32 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[70]"></a>setCalibrationMatrix</STRONG> (Thumb, 356 bytes, Stack size 32 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = setCalibrationMatrix &rArr; __aeabi_cdcmpeq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmpeq
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmpeq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
+<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
 </UL>
 
-<P><STRONG><a name="[61]"></a>getDisplayPoint</STRONG> (Thumb, 238 bytes, Stack size 80 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[60]"></a>getDisplayPoint</STRONG> (Thumb, 238 bytes, Stack size 80 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = getDisplayPoint &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmpeq
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmpeq
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[49]"></a>TouchPanel_Calibrate</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[48]"></a>TouchPanel_Calibrate</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = TouchPanel_Calibrate &rArr; Read_Ads7846 &rArr; TP_GetAdXY &rArr; Read_Y &rArr; RD_AD &rArr; DelayUS
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setCalibrationMatrix
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawCross
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
+<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setCalibrationMatrix
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawCross
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
 </UL>
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_game
 </UL>
 
-<P><STRONG><a name="[7a]"></a>calcola_distanza</STRONG> (Thumb, 394 bytes, Stack size 12 bytes, gioco.o(.text))
+<P><STRONG><a name="[61]"></a>calcola_distanza</STRONG> (Thumb, 394 bytes, Stack size 12 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = calcola_distanza
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
+<BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
 </UL>
 
-<P><STRONG><a name="[7b]"></a>muovi</STRONG> (Thumb, 118 bytes, Stack size 0 bytes, gioco.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
+<P><STRONG><a name="[7a]"></a>muovi</STRONG> (Thumb, 118 bytes, Stack size 0 bytes, gioco.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
 </UL>
 
-<P><STRONG><a name="[77]"></a>draw_arrow</STRONG> (Thumb, 410 bytes, Stack size 24 bytes, gioco.o(.text))
+<P><STRONG><a name="[78]"></a>draw_arrow</STRONG> (Thumb, 410 bytes, Stack size 24 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = draw_arrow &rArr; LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
 </UL>
-<BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
 </UL>
 
-<P><STRONG><a name="[62]"></a>draw_player</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, gioco.o(.text))
+<P><STRONG><a name="[63]"></a>draw_player</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = draw_player &rArr; LCD_DrawRectangle &rArr; LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_arrow
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
+<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_arrow
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_select
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_select
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
 </UL>
 
-<P><STRONG><a name="[4e]"></a>joystick_select</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, gioco.o(.text))
+<P><STRONG><a name="[4c]"></a>joystick_select</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = joystick_select &rArr; draw_player &rArr; LCD_DrawRectangle &rArr; LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[78]"></a>win</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, gioco.o(.text))
+<P><STRONG><a name="[79]"></a>win</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 132<LI>Call Chain = win &rArr; GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
+<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
 </UL>
 
-<P><STRONG><a name="[79]"></a>draw_obstacle</STRONG> (Thumb, 272 bytes, Stack size 16 bytes, gioco.o(.text))
+<P><STRONG><a name="[62]"></a>draw_obstacle</STRONG> (Thumb, 272 bytes, Stack size 16 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = draw_obstacle &rArr; LCD_DrawRectangle &rArr; LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
+<BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRectangle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
+<BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_sud
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_ovest
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_nord
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_est
 </UL>
 
-<P><STRONG><a name="[50]"></a>joystick_sud</STRONG> (Thumb, 260 bytes, Stack size 8 bytes, gioco.o(.text))
+<P><STRONG><a name="[4e]"></a>joystick_sud</STRONG> (Thumb, 268 bytes, Stack size 8 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = joystick_sud &rArr; win &rArr; GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[52]"></a>joystick_nord</STRONG> (Thumb, 260 bytes, Stack size 8 bytes, gioco.o(.text))
+<P><STRONG><a name="[50]"></a>joystick_nord</STRONG> (Thumb, 260 bytes, Stack size 8 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = joystick_nord &rArr; win &rArr; GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[4f]"></a>joystick_est</STRONG> (Thumb, 336 bytes, Stack size 8 bytes, gioco.o(.text))
+<P><STRONG><a name="[4d]"></a>joystick_est</STRONG> (Thumb, 342 bytes, Stack size 8 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = joystick_est &rArr; win &rArr; GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[51]"></a>joystick_ovest</STRONG> (Thumb, 260 bytes, Stack size 8 bytes, gioco.o(.text))
+<P><STRONG><a name="[4f]"></a>joystick_ovest</STRONG> (Thumb, 260 bytes, Stack size 8 bytes, gioco.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = joystick_ovest &rArr; win &rArr; GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_player
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_obstacle
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[56]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetASCIICode
+<P><STRONG><a name="[55]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetASCIICode
 </UL>
 
-<P><STRONG><a name="[7c]"></a>__rt_memcpy</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<P><STRONG><a name="[7b]"></a>__rt_memcpy</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 
-<P><STRONG><a name="[b4]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
+<P><STRONG><a name="[b6]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
 
-<P><STRONG><a name="[6e]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
+<P><STRONG><a name="[6f]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_memclr4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
+<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Ads7846
 </UL>
 
-<P><STRONG><a name="[b5]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[b7]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[b6]"></a>__rt_memclr_w</STRONG> (Thumb, 78 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[b8]"></a>__rt_memclr_w</STRONG> (Thumb, 78 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[b7]"></a>_memset_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[b9]"></a>_memset_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[7d]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
+<P><STRONG><a name="[7c]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
 </UL>
 
-<P><STRONG><a name="[b8]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[ba]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[b9]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[bb]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[ba]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[bc]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[37]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
+<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
 
-<P><STRONG><a name="[bb]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[3c]"></a>exit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, exit.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
+<LI>Call Chain = exit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+</UL>
 
-<P><STRONG><a name="[7e]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
+<P><STRONG><a name="[bd]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+
+<P><STRONG><a name="[7d]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[bc]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[be]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[40]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
-<P><STRONG><a name="[bd]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[be]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[bf]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[74]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd))
+<P><STRONG><a name="[75]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
 </UL>
+
+<P><STRONG><a name="[bf]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, indicate_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[80]"></a>_dadd</STRONG> (Thumb, 332 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
@@ -879,10 +891,10 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmpeq
 </UL>
 
-<P><STRONG><a name="[75]"></a>__aeabi_ddiv</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv))
+<P><STRONG><a name="[76]"></a>__aeabi_ddiv</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_ddiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
 </UL>
 
 <P><STRONG><a name="[84]"></a>_ddiv</STRONG> (Thumb, 552 bytes, Stack size 32 bytes, ddiv.o(x$fpl$ddiv), UNUSED)
@@ -890,11 +902,11 @@ Global Symbols
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[71]"></a>__aeabi_cdcmpeq</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, deqf.o(x$fpl$deqf))
+<P><STRONG><a name="[72]"></a>__aeabi_cdcmpeq</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, deqf.o(x$fpl$deqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_cdcmpeq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setCalibrationMatrix
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
+<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setCalibrationMatrix
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
 </UL>
 
 <P><STRONG><a name="[85]"></a>_dcmpeq</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, deqf.o(x$fpl$deqf), UNUSED)
@@ -902,32 +914,32 @@ Global Symbols
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_Inf
 </UL>
 
-<P><STRONG><a name="[76]"></a>__aeabi_d2uiz</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu))
+<P><STRONG><a name="[77]"></a>__aeabi_d2uiz</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_d2uiz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
 </UL>
 
 <P><STRONG><a name="[87]"></a>_dfixu</STRONG> (Thumb, 90 bytes, Stack size 32 bytes, dfixu.o(x$fpl$dfixu), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[70]"></a>__aeabi_i2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt))
-<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setCalibrationMatrix
+<P><STRONG><a name="[71]"></a>__aeabi_i2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt))
+<BR><BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setCalibrationMatrix
 </UL>
 
 <P><STRONG><a name="[c0]"></a>_dflt</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dflt), UNUSED)
 
-<P><STRONG><a name="[72]"></a>__aeabi_ui2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu))
-<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
+<P><STRONG><a name="[73]"></a>__aeabi_ui2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu))
+<BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
 </UL>
 
 <P><STRONG><a name="[c1]"></a>_dfltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
 
-<P><STRONG><a name="[73]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul))
+<P><STRONG><a name="[74]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_dmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDisplayPoint
 </UL>
 
 <P><STRONG><a name="[88]"></a>_dmul</STRONG> (Thumb, 332 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul), UNUSED)
@@ -960,62 +972,62 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[57]"></a>LCD_Configuration</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, glcd.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Initialization
+<P><STRONG><a name="[56]"></a>LCD_Configuration</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, glcd.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Initialization
 </UL>
 
-<P><STRONG><a name="[5a]"></a>LCD_SetCursor</STRONG> (Thumb, 1128 bytes, Stack size 12 bytes, glcd.o(.text))
+<P><STRONG><a name="[59]"></a>LCD_SetCursor</STRONG> (Thumb, 1128 bytes, Stack size 12 bytes, glcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LCD_SetCursor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetPoint
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetPoint
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
+<BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetPoint
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetPoint
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 </UL>
 
-<P><STRONG><a name="[58]"></a>delay_ms</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, glcd.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Initialization
+<P><STRONG><a name="[57]"></a>delay_ms</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, glcd.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Initialization
 </UL>
 
-<P><STRONG><a name="[5c]"></a>LCD_BGR2RGB</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, glcd.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetPoint
+<P><STRONG><a name="[5b]"></a>LCD_BGR2RGB</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, glcd.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetPoint
 </UL>
 
-<P><STRONG><a name="[63]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lib_timer.o(.text))
+<P><STRONG><a name="[64]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lib_timer.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_timer
 </UL>
 
-<P><STRONG><a name="[64]"></a>ADS7843_SPI_Init</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[65]"></a>ADS7843_SPI_Init</STRONG> (Thumb, 128 bytes, Stack size 8 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = ADS7843_SPI_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPC17xx_SPI_SetSpeed
+<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LPC17xx_SPI_SetSpeed
 </UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
+<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_Init
 </UL>
 
-<P><STRONG><a name="[68]"></a>DelayUS</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[69]"></a>DelayUS</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_GetAdXY
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Y
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RD_AD
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_GetAdXY
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Y
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RD_AD
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchPanel_Calibrate
 </UL>
 
-<P><STRONG><a name="[67]"></a>WR_CMD</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, touchpanel.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Y
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RD_AD
+<P><STRONG><a name="[68]"></a>WR_CMD</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, touchpanel.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Y
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RD_AD
 </UL>
 
-<P><STRONG><a name="[66]"></a>RD_AD</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, touchpanel.o(.text))
+<P><STRONG><a name="[67]"></a>RD_AD</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, touchpanel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = RD_AD &rArr; DelayUS
 </UL>
-<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WR_CMD
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
+<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WR_CMD
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DelayUS
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Y
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
+<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_Y
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_X
 </UL>
 
 <P><STRONG><a name="[8a]"></a>_dadd1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
