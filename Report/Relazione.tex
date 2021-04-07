@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titling} % package per il titolo
+\usepackage{graphicx}
+\usepackage{geometry}
+
+\title{\huge Extra Points Part 2}
+\author{
+\Large \textbf{Giovanni Pollo } (290136)}
+\date{}
+\renewcommand\maketitlehooka{
+  \begin{center}
+    \includegraphics[width=0.65\textwidth]{Immagini/LogoPolito.png} % Dimensioni per l'immagine
+  \end{center}
+}
+
+
+\begin{document}
+\begin{titlepage}
+  \centering
+  \vspace{2px}
+\end{titlepage}
+\maketitle
+
+\newpage
+
+\section{Descrizione Funzioni}
+Il codice è stato organizzato utilizzando una libreria (\emph{gioco.h}) con relativo file \emph{gioco.c} che contiene le implementazioni delle funzioni. La scelta di utilizzare un file dedicato alle principali funzioni del progetto è stata fatta per rendere il codice il più ordinato possibile. 
+
+In particolare, nel file \emph{gioco.c}, sono presenti le seguenti funzioni:
+\begin{itemize}
+    \item \textbf{Joystick}: Per la gestione del joystick vengono utilizzate le funzioni \emph{joystick\_select} (per il click del joystick), \emph{joystick\_nord} (per la posizione verso l'alto), \emph{joystick\_sud} (per la posizione verso il basso), \emph{joystick\_est} (per la posizione verso destra) e \emph{joystick\_ovest} (per la posizione verso sinistra). 
+    \item \textbf{Draw}: Per i disegni sono utilizzate le funzioni \emph{draw\_arrow} (per disegnare la freccia del player), \emph{draw\_player} (per disegnare il player in base alla posizione in cui si trova) e \emph{draw\_obstacle} (per disegnare gli ostacoli). Le ultime due, si basano su un metodo chiamato \emph{LCD\_DrawRectangle}, che è stato dichiarato nel file \emph{GLCD.h} ed implementato all'interno del file \emph{GLCD.c}.
+    \item \textbf{Movimento}: Per muovere il giocatore, in base alla direzione in cui si trova, è stata fatta una funzione dedicata, chiamata \emph{muovi}. Per evitare movimenti nel caso in cui ci si trovi attacati ai margini del labirinto, si è scelto di utilizzare un semplice \emph{if} che controlli preventivamente la posizione del player. 
+    \item \textbf{Distanza}: Anche per il calcolo della distanza si utilizza una funzione dedicata, in particolare \emph{calcola\_distanza}.
+    \item \textbf{Vittoria}: Per la vittoria si utilizza la funzione \emph{win} che ha il compito di disabilitare il \emph{RIT}, grazie alla \emph{disable\_RIT()}, così da interdire il funzionamento del joystick e di disegnare la scritta di vittoria "YOU WON". 
+\end{itemize}
+
+\section{Timer e RIT}
+
+Il RIT è stato utilizzato per il joystick. In particolare, lo si è inizializzato con un valore tale da consetire un timing di \( 50ms\). Di conseguenza, per gestire il movimento del player dopo 1 secondo, si è scelto attendere che la variabile interna al joystick raggiungesse 20 (infatti \( 1s = 50ms \cdot 20\)).
+
+Per gestire la pressione del display (touch), la scelta è ricaduta sul timer 0. In particolare quest'ultimo è stato inizializato al valore \( 0x4E2\), che corrisponde a \( 50 \mu s\). All'interno dell'interrupt del timer (\emph{TIMER0\_IRQHANDLER}) sono stati implementati i metodi per il riconoscimento della pressione del display con le relative azioni da eseguire.
+
+\section{Touch Panel}
+Per riconoscere il tocco del touch panel, si è utilizzata la \emph{get\_DisplayPoint} all'interno della routine di interrupt del timer 0. Questo ha permesso di implementare un meccanismo di Polling a cadenza \( 50 \mu s\).
+Per verificare dove fosse stato premuto il display, è bastato andare a contrallare i valori di \emph{display.x} e \emph{display.y}.
+
+\end{document}
+
