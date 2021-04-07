@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Jan 09 11:28:32 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Jan 10 08:51:47 2021
 <BR><P>
 <H3>Maximum Stack Usage =         32 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-RIT_IRQHandler &rArr; accendi_led &rArr; accendi_direzione &rArr; LED_Out
+RIT_IRQHandler &rArr; accendi_led &rArr; accendi_direzione
 <P>
 <H3>
 Functions with no stack information
@@ -396,6 +396,7 @@ Global Symbols
 <P><STRONG><a name="[48]"></a>LED_On</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, funct_led.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
 <LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
 </UL>
 
@@ -415,7 +416,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
 </UL>
 
 <P><STRONG><a name="[42]"></a>LED_init</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, lib_led.o(.text))
@@ -461,7 +461,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[1f]"></a>EINT0_IRQHandler</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, irq_button.o(.text))
+<P><STRONG><a name="[1f]"></a>EINT0_IRQHandler</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, irq_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EINT0_IRQHandler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
@@ -514,15 +514,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[4f]"></a>accendi_direzione</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, irq_rit.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = accendi_direzione &rArr; LED_Out
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = accendi_direzione
 </UL>
-<BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
 </UL>
 
-<P><STRONG><a name="[50]"></a>accendi_led</STRONG> (Thumb, 218 bytes, Stack size 8 bytes, irq_rit.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = accendi_led &rArr; accendi_direzione &rArr; LED_Out
+<P><STRONG><a name="[50]"></a>accendi_led</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, irq_rit.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = accendi_led &rArr; accendi_direzione
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
@@ -539,12 +539,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[59]"></a>muovi</STRONG> (Thumb, 52 bytes, Stack size 0 bytes, irq_rit.o(.text))
+<P><STRONG><a name="[59]"></a>muovi</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, irq_rit.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[2a]"></a>RIT_IRQHandler</STRONG> (Thumb, 882 bytes, Stack size 8 bytes, irq_rit.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = RIT_IRQHandler &rArr; accendi_led &rArr; accendi_direzione &rArr; LED_Out
+<P><STRONG><a name="[2a]"></a>RIT_IRQHandler</STRONG> (Thumb, 850 bytes, Stack size 8 bytes, irq_rit.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = RIT_IRQHandler &rArr; accendi_led &rArr; accendi_direzione
 </UL>
 <BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer

@@ -34,7 +34,7 @@ uint8_t uscita;
 
 void accendi_direzione (uint8_t dir);
 void muovi(uint8_t direzione, uint8_t *x, uint8_t *y);
-void accendi_led(uint8_t distanza);
+void accendi_led(uint8_t distanza, uint8_t uscita);
 
 void RIT_IRQHandler (void)
 {			
@@ -58,10 +58,10 @@ void RIT_IRQHandler (void)
 	//inizializzazione cordinate di partenza del giocatore
   static uint8_t player_x; // coordinata delle righe
 	static uint8_t player_y;	// coordinata delle colonne
-  static uint8_t flag_dist_eq0 = 0; 
-	static uint8_t flag_dist_gt0 = 0;
+	static uint8_t prima_volta = 0;
 	//inizializzazione distanza dagli ostacoli																
-	static uint8_t distanza = 0;         
+	static uint8_t distanza = 0; 
+																
    
   if (down != 0){
     if(((LPC_GPIO2->FIOPIN & (1<<10)) == 0)){ /* Bottone premuto */
@@ -121,17 +121,16 @@ void RIT_IRQHandler (void)
 				LED_Off(1);
 				LED_Off(2);
 				LED_Off(3);
-			
-				if(direzione ==3)
-					direzione=0;
-				else
-					direzione++;
-			
+					
+				direzione++;
+				direzione = direzione%4;
+				
 				distanza = calcola_distanza(direzione,player_x,player_y,map); /* Calcolo la distanza dall'ostacolo nella direzione in cui punto */
-				accendi_led(distanza);
+				accendi_led(distanza, uscita);
 					
       }
-      down1=0;           
+      down1=0;
+			prima_volta = 0;
       disable_RIT();
       reset_RIT();
       NVIC_EnableIRQ(EINT1_IRQn);                             /* disable Button interrupts            */
@@ -150,23 +149,14 @@ void RIT_IRQHandler (void)
       enable_RIT();
       down2++;
 			distanza = calcola_distanza(direzione, player_x, player_y, map);
-			if(distanza != 0 && uscita == 0){
-				if(flag_dist_gt0 == 0){
-					LED_Off(5);
+			
+			if(prima_volta == 0){
+				prima_volta = 1;
+				accendi_led(distanza, uscita);
+				if(distanza != 0){
 					reset_timer(1);
 					LPC_TIM1->MR0 = 0x00BEBC20;
 					enable_timer(1);
-					flag_dist_gt0 = 1;
-					flag_dist_eq0 = 0;
-				}
-			}
-			else if(uscita == 0){
-				if(flag_dist_eq0 == 0){
-					LED_Off(5);
-					reset_timer(1);
-					LPC_TIM1->MR0 = 0x002625A0;
-					enable_timer(1);
-					flag_dist_eq0 = 1;
 				}
 			}
 			
@@ -189,10 +179,8 @@ void RIT_IRQHandler (void)
 						NVIC_DisableIRQ(EINT1_IRQn); /* Disable interrupt bottone 1 */
 						NVIC_DisableIRQ(EINT2_IRQn); /* Disable interrupt bottone 2 */
 					}else{
-						if(uscita == 0){
-							distanza = calcola_distanza(direzione, player_x, player_y, map);
-							accendi_led(distanza);
-						}
+						distanza = calcola_distanza(direzione, player_x, player_y, map);
+						accendi_led(distanza, uscita);
 					}
 				}
 			}
@@ -200,11 +188,16 @@ void RIT_IRQHandler (void)
     else {    /* button released */
       down2=0;
 			if(uscita == 0){
-				accendi_led(distanza);
-				/* */
+				if(distanza != 0){
+					prima_volta = 0;
+					LED_Off(5);
+					disable_timer(1);
+				}
+				
 				NVIC_ClearPendingIRQ(EINT1_IRQn);
 				LPC_SC->EXTINT &= (1 << 1);
-				NVIC_EnableIRQ(EINT1_IRQn);                         
+				NVIC_EnableIRQ(EINT1_IRQn);
+				
 				NVIC_ClearPendingIRQ(EINT2_IRQn);
 				LPC_SC->EXTINT &= (1 << 1);
 				NVIC_EnableIRQ(EINT2_IRQn);
@@ -311,16 +304,16 @@ uint8_t calcola_distanza (uint8_t direzione, uint8_t x, uint8_t y, uint8_t map[1
 void accendi_direzione (uint8_t direzione){
 	switch(direzione){
 		case 0: /* est */
-			LED_Out(4); /* 0...0100 perchè dobbiamo accendere il 3 LED */
+			LED_On(2); /* Siccome punto verso est, tengo fisso acceso il LED di direzione*/
 			break;
 		case 1: /* sud */
-			LED_Out(2); /* 0...010 perchè dobbiamo accendere il 2 LED */
+			LED_On(1);
 			break;
 		case 2: // ovest
-			LED_Out(1); /* 0...01 perchè dobbiamo accendere il 1 LED */
+			LED_On(0);
 			break;
 		default: /* nord */
-			LED_Out(8); /* 0...01000 perchè dobbiamo accendere il 4 LED */
+			LED_On(3);
 			break;
 	}
 	
@@ -329,74 +322,80 @@ void accendi_direzione (uint8_t direzione){
 void muovi(uint8_t direzione, uint8_t *x, uint8_t *y){
 		switch(direzione){
 			case 0:
-				*y += 1;
+				if(*y != 14)
+					*y += 1;
 				break;
 			case 1:
+				if(*x != 12)
 				*x += 1;
 				break;
 			case 2:
-				*y -= 1;
+				if(*y != 0)
+					*y -= 1;
 				break;
 			case 3:
-				*x -= 1;
+				if(*x != 0)
+					*x -= 1;
 				break;
 	}
 }
 
-void accendi_led(uint8_t distanza){
-	switch(distanza){
-					case 0: 
-						reset_timer(0);
-						LPC_TIM0->MR0 = 0x0017D784; /* Lampeggio a 8 Hz */
-						enable_timer(0);
-					
-						if(down2 == 0){ /* Il bottone di running è stato rilasciato */
-							LED_Off(5);
-							reset_timer(1);
-							LPC_TIM1->MR0 = 0x002625A0; /* lampeggio a 5 Hz */
-							enable_timer(1);
-						}
-						break;
-					case 1:
-					case 2:
-						if(down2 == 0){ /* Il bottone di running è stato rilasciato */
-							LED_Off(5); /* spengo il LED di running */
-							disable_timer(1);
-							reset_timer(1);
-						}
-
-						reset_timer(0);
-						LPC_TIM0->MR0 = 0x002FAF08; /* Lampeggio 4 Hz */
-						enable_timer(0);
-						break;
-					case 3:
-					case 4:
-					case 5:
-						if(down2 == 0){ /* Il bottone di running è stato rilasciato */
-							LED_Off(5); /* spengo il LED di running */
-							disable_timer(1);
-							reset_timer(1);
-						}
-						
-						// 2 Hz												
-						reset_timer(0);
-						LPC_TIM0->MR0 = 0x005F5E10; /* blink 2 Hz */
-						enable_timer(0);
-						break;
-					
-					default:
-						/* Il led di direzione deve rimanere acceso fisso senza lampeggiare */
-						if(down2 == 0){ /* Il bottone di running è stato rilasciato */
-							LED_Off(5);
-							disable_timer(1);
-							reset_timer(1);
-						}
-						
-						disable_timer(0);
-						reset_timer(0);
-						accendi_direzione(direzione);
-						break;
+void accendi_led(uint8_t distanza, uint8_t uscita){
+	if(uscita == 0){
+		switch(distanza){
+			case 0: 
+				reset_timer(0);
+				LPC_TIM0->MR0 = 0x0017D784; /* Lampeggio a 8 Hz */
+				enable_timer(0);
+			
+				
+				LED_Off(5);
+				reset_timer(1);
+				LPC_TIM1->MR0 = 0x002625A0; /* lampeggio a 5 Hz */
+				enable_timer(1);
+			
+				break;
+			case 1:
+			case 2:
+				if(down2 == 0){ /* Il bottone di running è stato rilasciato */
+					LED_Off(5); /* spengo il LED di running */
+					disable_timer(1);
+					reset_timer(1);
 				}
+
+				reset_timer(0);
+				LPC_TIM0->MR0 = 0x002FAF08; /* Lampeggio 4 Hz */
+				enable_timer(0);
+				break;
+			case 3:
+			case 4:
+			case 5:
+				if(down2 == 0){ /* Il bottone di running è stato rilasciato */
+					LED_Off(5); /* spengo il LED di running */
+					disable_timer(1);
+					reset_timer(1);
+				}
+				
+				// 2 Hz												
+				reset_timer(0);
+				LPC_TIM0->MR0 = 0x005F5E10; /* blink 2 Hz */
+				enable_timer(0);
+				break;
+			
+			default:
+				/* Il led di direzione deve rimanere acceso fisso senza lampeggiare */
+				if(down2 == 0){ /* Il bottone di running è stato rilasciato */
+					LED_Off(5);
+					disable_timer(1);
+					reset_timer(1);
+				}
+				
+				disable_timer(0);
+				reset_timer(0);
+				accendi_direzione(direzione);
+				break;
+		}
+	}
 }
 /******************************************************************************
 **                            End Of File

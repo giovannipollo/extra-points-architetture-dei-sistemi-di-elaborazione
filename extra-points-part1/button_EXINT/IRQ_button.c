@@ -9,7 +9,7 @@ void EINT0_IRQHandler (void)	  	/* INT0														 */
 	down = 1;
 	enable_RIT();										/* enable RIT to count 50ms				 */
 	NVIC_DisableIRQ(EINT0_IRQn);		/* disable Button interrupts			 */
-	LPC_PINCON->PINSEL4    &= ~(1 << 20);     /* GPIO pin selection */
+	// LPC_PINCON->PINSEL4    &= ~(1 << 20);     /* GPIO pin selection */
 	LPC_SC->EXTINT &= (1 << 0);     /* clear pending interrupt         */
 }
 
