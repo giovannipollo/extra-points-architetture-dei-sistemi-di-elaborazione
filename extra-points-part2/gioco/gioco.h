@@ -14,5 +14,6 @@ void joystick_est(void);
 void joystick_ovest(void);
 void draw_player(void);
 void draw_arrow(void);
+void draw_obstacle(uint8_t offset);
 uint8_t calcola_distanza(void);
 void muovi(void);

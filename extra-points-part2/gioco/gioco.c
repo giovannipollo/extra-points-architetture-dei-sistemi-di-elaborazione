@@ -168,6 +168,9 @@ void joystick_sud(void){
 			old_player_x = player_x;
 			old_player_y = player_y;
 			draw_player();
+			if(distanza < 5){
+				draw_obstacle(distanza + 1);
+			}
 			break;
 		case 20:
 			sud = 0;
@@ -179,11 +182,13 @@ void joystick_sud(void){
 					old_player_y = player_y;
 					muovi();
 					draw_player();
+					distanza = calcola_distanza();
+					if(distanza < 5){
+							draw_obstacle(distanza+1);
+					}
 					if(map[player_x][player_y] == 2){
 						//scritta di vittoria
 						// disabilito joystick e touch
-					}else{
-						distanza = calcola_distanza();
 					}
 				}
 			}
@@ -207,6 +212,9 @@ void joystick_nord(void){
 				old_player_x = player_x;
 				old_player_y = player_y;
 				draw_player();
+				if(distanza < 5){
+					draw_obstacle(distanza + 1);
+				}
 				break;
 			case 20:
 				nord = 0;
@@ -218,10 +226,12 @@ void joystick_nord(void){
 						old_player_y = player_y;
 						muovi();
 						draw_player();
+						distanza = calcola_distanza();
+						if(distanza < 5){
+							draw_obstacle(distanza+1);
+						}
 						if(map[player_x][player_y] == 2){
 							//scritta di vittoria
-						}else{
-							distanza = calcola_distanza();
 						}
 					}
 				}
@@ -246,6 +256,9 @@ void joystick_est(void){
 				old_player_x = player_x;
 				old_player_y = player_y;
 				draw_player();
+				if(distanza < 5){
+					draw_obstacle(distanza + 1);
+				}
 				break;
 			case 20:
 				est = 0;
@@ -257,10 +270,12 @@ void joystick_est(void){
 						old_player_y = player_y;
 						muovi();
 						draw_player();
+						distanza = calcola_distanza();
+						if(distanza < 5){
+							draw_obstacle(distanza+1);
+						}
 						if(map[player_x][player_y] == 2){
 							//scritta di vittoria
-						}else{
-							distanza = calcola_distanza();
 						}
 					}
 				}
@@ -285,6 +300,9 @@ void joystick_ovest(void){
 				old_player_x = player_x;
 				old_player_y = player_y;
 				draw_player();
+				if(distanza < 5){
+					draw_obstacle(distanza + 1);
+				}
 				break;
 			case 20:
 				ovest = 0;
@@ -296,10 +314,12 @@ void joystick_ovest(void){
 						old_player_y = player_y;
 						muovi();
 						draw_player();
+						distanza = calcola_distanza();
+						if(distanza < 5){
+							draw_obstacle(distanza+1);
+						}
 						if(map[player_x][player_y] == 2){
 							//scritta di vittoria
-						}else{
-							distanza = calcola_distanza();
 						}
 					}
 				}
@@ -373,6 +393,26 @@ void draw_arrow(void){
 				offset_x += 1;
 				offset_y -= 1;
 			}
+			break;
+	}
+}
+
+
+void draw_obstacle(uint8_t offset){
+	switch(direzione){
+		case 'e':
+			LCD_DrawRectangle(player_y*14 + 15 + offset*14 + 1, player_x*14 + 50 + 1, 12, 12, Red, 1);
+			break;
+		case 's':
+			LCD_DrawRectangle(player_y*14 + 15 + 1, player_x*14 + offset*14 + 50 + 1, 12, 12, Red, 1);
+			break;
+		case 'o':
+			LCD_DrawRectangle(player_y*14 + 15 - offset*14 + 1, player_x*14 + 50 + 1, 12, 12, Red, 1);
+			break;
+		case 'n':
+			LCD_DrawRectangle(player_y*14 + 15 + 1, player_x*14 - offset*14 + 50 + 1, 12, 12, Red, 1);
+			break;
+		default:
 			break;
 	}
 }

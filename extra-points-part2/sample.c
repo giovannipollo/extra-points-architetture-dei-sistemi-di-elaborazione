@@ -43,7 +43,6 @@ int main (void) {
   while (1) {                           /* Loop forever                       */	
 		__ASM("wfi");
   }
-
 }
 
 
@@ -82,7 +81,7 @@ void init_game(void){
 	
 	
 	/* Init position of the player and mode */
-	direzione = 'n';
+	direzione = 'e';
 	player_x = 7;
 	player_y = 7;
 	mode = 'm';
