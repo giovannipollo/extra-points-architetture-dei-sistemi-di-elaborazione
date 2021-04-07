@@ -1,6 +1,7 @@
 #include "gioco.h"
 #include "lpc17xx.h"
 #include "../GLCD/GLCD.h"
+#include "../RIT/RIT.h"
 
 
 uint8_t map[13][15] = {{2,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
@@ -21,7 +22,7 @@ uint8_t map[13][15] = {{2,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
 //inizializzazione distanza dagli ostacoli																
 uint8_t distanza;
 uint8_t old_player_x, old_player_y, old_direzione;
-uint16_t colore;																
+uint16_t colore;															
 																
 uint8_t calcola_distanza(void){
 	uint8_t count = 0;
@@ -196,8 +197,7 @@ void joystick_sud(void){
 							draw_obstacle(distanza+1);
 					}
 					if(map[player_x][player_y] == 2){
-						//scritta di vittoria
-						// disabilito joystick e touch
+						win();
 					}
 				}
 			}
@@ -244,7 +244,7 @@ void joystick_nord(void){
 							draw_obstacle(distanza+1);
 						}
 						if(map[player_x][player_y] == 2){
-							//scritta di vittoria
+							win();
 						}
 					}
 				}
@@ -292,7 +292,7 @@ void joystick_est(void){
 							draw_obstacle(distanza+1);
 						}
 						if(map[player_x][player_y] == 2){
-							//scritta di vittoria
+							win();
 						}
 					}
 				}
@@ -340,7 +340,7 @@ void joystick_ovest(void){
 							draw_obstacle(distanza+1);
 						}
 						if(map[player_x][player_y] == 2){
-							//scritta di vittoria
+							win();
 						}
 					}
 				}
@@ -436,4 +436,12 @@ void draw_obstacle(uint8_t offset){
 		default:
 			break;
 	}
+}
+
+void win(void){
+	vittoria = 1;
+	disable_RIT();
+	reset_RIT();
+	LCD_DrawRectangle(15, 50, 210, 182, Cyan , 1);
+	GUI_Text(90, 120, (uint8_t *) "YOU WON", Black, Cyan);
 }

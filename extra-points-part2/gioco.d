@@ -9,3 +9,4 @@
 .\gioco.o: C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
 .\gioco.o: C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\gioco.o: gioco\../GLCD/GLCD.h
+.\gioco.o: gioco\../RIT/RIT.h

@@ -15,7 +15,7 @@ I (TouchPanel/TouchPanel.h)(0x5E131400)
 I (GLCD/GLCD.h)(0x5FFDB3DC)
 I (timer/timer.h)(0x5FF6F818)
 I (RIT/RIT.h)(0x5FF6F818)
-I (gioco/gioco.h)(0x6000345D)
+I (gioco/gioco.h)(0x60007AD1)
 I (joystick/joystick.h)(0x5FF6F818)
 F (.\core_cm3.c)(0x5FF6F816)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\core_cm3.o --omf_browse .\core_cm3.crf --depend .\core_cm3.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -38,7 +38,7 @@ I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (RIT\RIT.h)(0x5FF6F818)
-I (RIT\../gioco/gioco.h)(0x6000345D)
+I (RIT\../gioco/gioco.h)(0x60007AD1)
 F (.\RIT\lib_RIT.c)(0x5FF6F818)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_rit.o --omf_browse .\lib_rit.crf --depend .\lib_rit.d)
 I (C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
@@ -82,7 +82,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E9122)
 F (.\GLCD\AsciiLib.h)(0x4CEFE47F)()
 F (.\GLCD\GLCD.h)(0x5FFDB3DC)()
 F (.\GLCD\HzLib.h)(0x4CF00CD6)()
-F (.\timer\IRQ_timer.c)(0x60003752)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_timer.o --omf_browse .\irq_timer.crf --depend .\irq_timer.d)
+F (.\timer\IRQ_timer.c)(0x60008BE7)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\irq_timer.o --omf_browse .\irq_timer.crf --depend .\irq_timer.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E9122)
 I (C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
@@ -93,7 +93,7 @@ I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (timer\timer.h)(0x5FF6F818)
-I (timer\../gioco/gioco.h)(0x6000345D)
+I (timer\../gioco/gioco.h)(0x60007AD1)
 I (timer\../TouchPanel/TouchPanel.h)(0x5E131400)
 I (timer\../GLCD/GLCD.h)(0x5FFDB3DC)
 F (.\timer\lib_timer.c)(0x60001C3D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\lib_timer.o --omf_browse .\lib_timer.crf --depend .\lib_timer.d)
@@ -119,8 +119,8 @@ I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu
 I (C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (TouchPanel\../TouchPanel/TouchPanel.h)(0x5E131400)
 F (.\TouchPanel\TouchPanel.h)(0x5E131400)()
-F (.\gioco\gioco.c)(0x600029C6)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\gioco.o --omf_browse .\gioco.crf --depend .\gioco.d)
-I (gioco\gioco.h)(0x6000345D)
+F (.\gioco\gioco.c)(0x60007D65)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I.\RTE\_Target_1-IC:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="533" -D_RTE_ -DLPC175x_6x -D_RTE_ -DSIMULATOR-o .\gioco.o --omf_browse .\gioco.crf --depend .\gioco.d)
+I (gioco\gioco.h)(0x60007AD1)
 I (C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\lpc17xx.h)(0x58493F92)
 I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F3392)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E9122)
@@ -130,4 +130,5 @@ I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F3392)
 I (C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x58493F92)
 I (gioco\../GLCD/GLCD.h)(0x5FFDB3DC)
-F (.\gioco\gioco.h)(0x6000345D)()
+I (gioco\../RIT/RIT.h)(0x5FF6F818)
+F (.\gioco\gioco.h)(0x60007AD1)()

@@ -23,11 +23,11 @@
 ** Returned value:		None
 **
 ******************************************************************************/
-uint8_t player_x, player_y, direzione, mode, start;
+uint8_t player_x, player_y, direzione, mode, start, vittoria;
 
 void TIMER0_IRQHandler (void)
 {
-	uint8_t i;
+	uint8_t i, j;
 	getDisplayPoint(&display, Read_Ads7846(), &matrix ); 
 	
 	/* Reset */
@@ -48,14 +48,22 @@ void TIMER0_IRQHandler (void)
 	/* Clear */
 	if(display.x >= 125 && display.x <= 235){
 		if(display.y >= 260 && display.y <= 310){
-			LCD_Clear(Blue);
+			if(vittoria == 0){
+				for(i = 0; i < 13; i++){
+					for(j = 0; j < 15; j++){
+						if(i != player_x || j != player_y){
+							LCD_DrawRectangle(j*14 + 15 + 1, i*14 + 50 + 1, 12, 12, Cyan, 1);
+						}
+					}
+				}
+			}
 		}
 	}
 
 	/* Start */
 	if(display.x >= 15 && display.x <= 225){
 		if(display.y >= 50 && display.y <= 232){
-			
+			vittoria = 0;
 			player_x = 7;
 			player_y = 7;
 			direzione = 'e';
