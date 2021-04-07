@@ -29,12 +29,14 @@ uint8_t distanza;
 
 uint8_t calcola_distanza (void)
 {
-	uint8_t i,j,count = 0;
+	uint8_t count = 0;
+	uint8_t i = 0;
+	uint8_t j = 0;
 	int finito = 0;
 	/* Conteggio distanza ostacolo */
 	switch(direzione){
 			case 0:  //est
-				//dobbiamo scorrere la riga verso dx
+				//scorrere la riga verso dx
 			  j = player_y+1;
 				count = 0;
 				while (finito == 0 && j != 15 && map[player_x][j] == 0) /* finché trovi le caselle vuote e non sei alla fine vai avanti */
@@ -51,7 +53,7 @@ uint8_t calcola_distanza (void)
 				break;
 			
 			case 1: /* sud */
-				/* dobbiamo scorrere la colonna verso il basso */
+				/* scorrere la colonna verso il basso */
 			  i = player_x+1;
 				count = 0;
 				while (finito == 0 && i != 13 && map[i][player_y] == 0) /* finché trovi le caselle vuote e non sei alla fine vai avanti */
@@ -67,7 +69,7 @@ uint8_t calcola_distanza (void)
 				break;
 			
 			case 2:
-				/* dobbiamo scorrere la riga verso sx */
+				/* scorrere la riga verso sx */
 				if(player_y > 0)
 					j = player_y-1;
 				else
@@ -86,7 +88,7 @@ uint8_t calcola_distanza (void)
 				break;
 			
 			case 3:
-				/* dobbiamo scorrere la colonna verso su */
+				/* scorrere la colonna verso l'alto */
 				if(player_x > 0)
 					i = player_x-1;
 				else
@@ -119,13 +121,13 @@ void accendi_direzione (void){
 			LED_On(2); /* Siccome punto verso est, tengo fisso acceso il LED di direzione*/
 			break;
 		case 1: /* sud */
-			LED_On(1);
+			LED_On(1); /* Siccome punto verso sud, tengo fisso acceso il LED di direzione*/
 			break;
 		case 2: // ovest
-			LED_On(0);
+			LED_On(0); /* Siccome punto verso ovest, tengo fisso acceso il LED di direzione*/
 			break;
 		default: /* nord */
-			LED_On(3);
+			LED_On(3); /* Siccome punto verso nord, tengo fisso acceso il LED di direzione*/
 			break;
 	}
 	
@@ -135,7 +137,7 @@ void muovi(void){
 		switch(direzione){
 			case 0:
 				if(player_y != 14)
-					player_y++;
+					player_y++; /* Muovi il player incrementando il valore di player_y. */
 				break;
 			case 1:
 				if(player_x != 12)
