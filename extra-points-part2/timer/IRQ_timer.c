@@ -62,7 +62,7 @@ void TIMER0_IRQHandler (void)
 							}
 						}
 					}
-					calcola_distanza();
+					distanza = calcola_distanza();
 					if(distanza < 5){
 						draw_obstacle(distanza + 1);
 					}
