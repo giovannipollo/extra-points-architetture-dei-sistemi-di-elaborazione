@@ -9,5 +9,6 @@
 .\irq_timer.o: C:\Users\giova\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
 .\irq_timer.o: C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\irq_timer.o: timer\timer.h
+.\irq_timer.o: timer\../gioco/gioco.h
 .\irq_timer.o: timer\../TouchPanel/TouchPanel.h
 .\irq_timer.o: timer\../GLCD/GLCD.h

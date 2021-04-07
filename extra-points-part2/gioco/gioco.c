@@ -20,7 +20,8 @@ uint8_t map[13][15] = {{2,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
 					
 //inizializzazione distanza dagli ostacoli																
 uint8_t distanza;
-uint8_t old_player_x, old_player_y;																
+uint8_t old_player_x, old_player_y, old_direzione;
+uint16_t colore;																
 																
 uint8_t calcola_distanza(void){
 	uint8_t count = 0;
@@ -143,10 +144,15 @@ void joystick_select(void){
 		select++;
 		switch(select){
 			case 1:
-				if(mode == 'e')
+				if(mode == 'e'){
 					mode = 'm';
-				else
+					colore = Black;
+				}
+				else{
 					mode = 'e';
+					colore = Magenta;
+				}
+				draw_player();
 				break;
 			default:
 				break;
@@ -163,13 +169,16 @@ void joystick_sud(void){
 	sud++;
 	switch(sud){
 		case 1:
+			old_direzione = direzione;
 			direzione = 's';
 			distanza = calcola_distanza();
 			old_player_x = player_x;
 			old_player_y = player_y;
-			draw_player();
-			if(distanza < 5){
-				draw_obstacle(distanza + 1);
+			if(old_direzione != 's'){
+				draw_player();
+				if(distanza < 5){
+					draw_obstacle(distanza + 1);
+				}
 			}
 			break;
 		case 20:
@@ -207,13 +216,17 @@ void joystick_nord(void){
 		nord++;
 		switch(nord){
 			case 1:
+				old_direzione = direzione;
 				direzione = 'n';
 				distanza = calcola_distanza();
 				old_player_x = player_x;
 				old_player_y = player_y;
-				draw_player();
-				if(distanza < 5){
-					draw_obstacle(distanza + 1);
+				
+				if(old_direzione != 'n'){
+					draw_player();
+					if(distanza < 5){
+						draw_obstacle(distanza + 1);
+					}
 				}
 				break;
 			case 20:
@@ -251,13 +264,17 @@ void joystick_est(void){
 		est++;
 		switch(est){
 			case 1:
+				old_direzione = direzione;
 				direzione = 'e';
 				distanza = calcola_distanza();
 				old_player_x = player_x;
 				old_player_y = player_y;
-				draw_player();
-				if(distanza < 5){
-					draw_obstacle(distanza + 1);
+				
+				if(old_direzione != 'e'){
+					draw_player();
+					if(distanza < 5){
+						draw_obstacle(distanza + 1);
+					}
 				}
 				break;
 			case 20:
@@ -295,13 +312,17 @@ void joystick_ovest(void){
 		ovest++;
 		switch(ovest){
 			case 1:
+				old_direzione = direzione;
 				direzione = 'o';
 				distanza = calcola_distanza();
 				old_player_x = player_x;
 				old_player_y = player_y;
-				draw_player();
-				if(distanza < 5){
-					draw_obstacle(distanza + 1);
+				
+				if(old_direzione != 'o'){
+					draw_player();
+					if(distanza < 5){
+						draw_obstacle(distanza + 1);
+					}
 				}
 				break;
 			case 20:
@@ -356,7 +377,7 @@ void draw_arrow(void){
 			while(length>1)
 			{ 
 				length -= 2;
-				LCD_DrawLine( player_y*14+offset_x+15+5, player_x*14 + offset_y+50+1 , player_y*14 + offset_x +15 +5 ,player_x*14 + offset_y + length +50 +1 , Black );
+				LCD_DrawLine( player_y*14+offset_x+15+5, player_x*14 + offset_y+50+1 , player_y*14 + offset_x +15 +5 ,player_x*14 + offset_y + length +50 +1 , colore );
 				offset_x += 1;
 				offset_y += 1;
 			}
@@ -367,7 +388,7 @@ void draw_arrow(void){
 			while(length>1)
 			{ 
 				length -= 2;
-				LCD_DrawLine( player_y*14 + offset_x + 15 + 2, player_x*14 + offset_y + 50 + 4, player_y*14+ offset_x + length + 15 + 2 , player_x*14 + offset_y + 50 + 4, Black );
+				LCD_DrawLine( player_y*14 + offset_x + 15 + 2, player_x*14 + offset_y + 50 + 4, player_y*14+ offset_x + length + 15 + 2 , player_x*14 + offset_y + 50 + 4, colore );
 				offset_x += 1;
 				offset_y += 1;
 			}
@@ -378,7 +399,7 @@ void draw_arrow(void){
 			while(length>1)
 				{ 
 					length -= 2;
-					LCD_DrawLine( player_y*14+offset_x + 5, player_x*14 + offset_y + 50+1 , player_y*14+offset_x + 5 , player_x*14 + offset_y +length +50+1 , Black );
+					LCD_DrawLine( player_y*14+offset_x + 5, player_x*14 + offset_y + 50+1 , player_y*14+offset_x + 5 , player_x*14 + offset_y +length +50+1 , colore );
 					offset_x -= 1;
 					offset_y += 1;
 }
@@ -389,7 +410,7 @@ void draw_arrow(void){
 			while(length>1)
 			{ 
 				length -= 2;
-				LCD_DrawLine( player_y*14 + offset_x + 15 + 2, player_x*14 + offset_y + 50 - 10 , player_y*14 + offset_x + length + 15 + 2, player_x*14 +offset_y + 50 - 10 , Black );
+				LCD_DrawLine( player_y*14 + offset_x + 15 + 2, player_x*14 + offset_y + 50 - 10 , player_y*14 + offset_x + length + 15 + 2, player_x*14 +offset_y + 50 - 10 , colore );
 				offset_x += 1;
 				offset_y -= 1;
 			}
