@@ -3,7 +3,7 @@
 #include "../RIT/RIT.h"		  			/* you now need RIT library 			 */
 #include "../timer/timer.h"
 
-extern uint8_t down, down1, down2;
+uint8_t down, down1, down2;
 void EINT0_IRQHandler (void)	  	/* INT0														 */
 {	
 	down = 1;

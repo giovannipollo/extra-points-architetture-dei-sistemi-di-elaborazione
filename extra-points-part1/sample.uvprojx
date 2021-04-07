@@ -496,6 +496,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Gioco</GroupName>
+          <Files>
+            <File>
+              <FileName>gioco.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\gioco.c</FilePath>
+            </File>
+            <File>
+              <FileName>gioco.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\gioco.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

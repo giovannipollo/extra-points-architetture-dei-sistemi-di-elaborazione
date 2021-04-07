@@ -9,4 +9,5 @@
 .\irq_rit.o: C:\Users\giova\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\irq_rit.o: RIT\RIT.h
 .\irq_rit.o: RIT\../led/led.h
+.\irq_rit.o: RIT\../gioco.h
 .\irq_rit.o: RIT\../timer/timer.h

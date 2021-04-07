@@ -25,11 +25,24 @@ extern uint8_t direzione;					/* defined in IRQ_RIT								*/
 #ifdef SIMULATOR
 extern uint8_t ScaleFlag; // <- ScaleFlag needs to visible in order for the emulator to find the symbol (can be placed also inside system_LPC17xx.h but since it is RO, it needs more work)
 #endif
-/*----------------------------------------------------------------------------
-  Main Program
- *----------------------------------------------------------------------------*/
+
+
+
+/* Prototipi funzioni */
+void game_init(void);
+
+
 int main (void) {
-  	
+
+	game_init();
+  while (1) {                           /* Loop forever                       */	
+		__ASM("wfi");
+  }
+
+}
+
+
+void game_init(void){
 	SystemInit();  												/* System Initialization (i.e., PLL)  */
   LED_init();                           /* LED Initialization                 */
   BUTTON_init();												/* BUTTON Initialization              */
@@ -46,13 +59,6 @@ int main (void) {
 																				/* Usato per il lampeggio a 5Hz*/
 																				/* count = 0.10 * 25*10^6 = 2.5x10^6 = 0x002625A0 */
 	
-	
-
 	LPC_SC->PCON |= 0x1;									/* power-down	mode										*/
 	LPC_SC->PCON &= ~(0x2);						
-		
-  while (1) {                           /* Loop forever                       */	
-		__ASM("wfi");
-  }
-
 }

@@ -19,9 +19,8 @@
 ** Returned value:		None
 **
 ******************************************************************************/
-extern unsigned char led_value;					/* defined in funct_led								*/
-extern uint8_t direzione;					/* defined in IRQ_RIT								*/
-extern uint8_t uscita;
+uint8_t direzione;					/* defined in IRQ_RIT								*/
+uint8_t uscita;
 void TIMER0_IRQHandler (void)
 {
 

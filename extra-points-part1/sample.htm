@@ -3,16 +3,16 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Jan 10 08:51:47 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Jan 10 11:09:08 2021
 <BR><P>
 <H3>Maximum Stack Usage =         32 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-RIT_IRQHandler &rArr; accendi_led &rArr; accendi_direzione
+RIT_IRQHandler &rArr; button2_RIT &rArr; accendi_led &rArr; accendi_direzione
 <P>
 <H3>
 Functions with no stack information
 </H3><UL>
- <LI><a href="#[5e]">__user_initial_stackheap</a>
+ <LI><a href="#[65]">__user_initial_stackheap</a>
 </UL>
 </UL>
 <P>
@@ -97,9 +97,9 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
-<P><STRONG><a name="[5f]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[66]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[60]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[67]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
 <P><STRONG><a name="[35]"></a>__scatterload_copy</STRONG> (Thumb, 26 bytes, Stack size unknown bytes, __scatter_copy.o(!!handler_copy), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
@@ -107,80 +107,80 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
 
-<P><STRONG><a name="[61]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
+<P><STRONG><a name="[68]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
 <P><STRONG><a name="[39]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
 </UL>
 
-<P><STRONG><a name="[62]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
+<P><STRONG><a name="[69]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
 
-<P><STRONG><a name="[63]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002C))
+<P><STRONG><a name="[6a]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002C))
 
-<P><STRONG><a name="[64]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
+<P><STRONG><a name="[6b]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
 
-<P><STRONG><a name="[65]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
+<P><STRONG><a name="[6c]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
 
-<P><STRONG><a name="[66]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
+<P><STRONG><a name="[6d]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
 
-<P><STRONG><a name="[67]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
+<P><STRONG><a name="[6e]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
 
-<P><STRONG><a name="[68]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
+<P><STRONG><a name="[6f]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
 
-<P><STRONG><a name="[69]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
+<P><STRONG><a name="[70]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
 
-<P><STRONG><a name="[6a]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
+<P><STRONG><a name="[71]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
 
-<P><STRONG><a name="[6b]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000A))
+<P><STRONG><a name="[72]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000A))
 
-<P><STRONG><a name="[6c]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000011))
+<P><STRONG><a name="[73]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000011))
 
-<P><STRONG><a name="[6d]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
+<P><STRONG><a name="[74]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
 
-<P><STRONG><a name="[6e]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
+<P><STRONG><a name="[75]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
 
-<P><STRONG><a name="[6f]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
+<P><STRONG><a name="[76]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
 
-<P><STRONG><a name="[70]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
+<P><STRONG><a name="[77]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
 
-<P><STRONG><a name="[71]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
+<P><STRONG><a name="[78]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
 
-<P><STRONG><a name="[72]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
+<P><STRONG><a name="[79]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
 
-<P><STRONG><a name="[73]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000033))
+<P><STRONG><a name="[7a]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000033))
 
-<P><STRONG><a name="[74]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
+<P><STRONG><a name="[7b]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
 
-<P><STRONG><a name="[75]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
+<P><STRONG><a name="[7c]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
 
-<P><STRONG><a name="[76]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
+<P><STRONG><a name="[7d]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
 
 <P><STRONG><a name="[3e]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
-<P><STRONG><a name="[77]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
+<P><STRONG><a name="[7e]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
 
-<P><STRONG><a name="[78]"></a>__rt_lib_shutdown_fini_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
+<P><STRONG><a name="[7f]"></a>__rt_lib_shutdown_fini_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
 
-<P><STRONG><a name="[79]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000009))
+<P><STRONG><a name="[80]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000009))
 
-<P><STRONG><a name="[7a]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000011))
+<P><STRONG><a name="[81]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000011))
 
-<P><STRONG><a name="[7b]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000012))
+<P><STRONG><a name="[82]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000012))
 
-<P><STRONG><a name="[7c]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
+<P><STRONG><a name="[83]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
-<P><STRONG><a name="[7d]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000006))
+<P><STRONG><a name="[84]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000006))
 
-<P><STRONG><a name="[7e]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E))
+<P><STRONG><a name="[85]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E))
 
 <P><STRONG><a name="[33]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 </UL>
 
-<P><STRONG><a name="[7f]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+<P><STRONG><a name="[86]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
 <P><STRONG><a name="[36]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -193,19 +193,19 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
-<P><STRONG><a name="[80]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+<P><STRONG><a name="[87]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[3a]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; init_timer &rArr; __NVIC_SetPriority
+<BR><BR>[Stack]<UL><LI>Max Depth = 32 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; game_init &rArr; init_timer &rArr; __NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 <LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[81]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
+<P><STRONG><a name="[88]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
-<P><STRONG><a name="[4a]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
+<P><STRONG><a name="[4b]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
@@ -213,7 +213,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
-<P><STRONG><a name="[82]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+<P><STRONG><a name="[89]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
 <P><STRONG><a name="[3f]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
@@ -376,287 +376,383 @@ Global Symbols
 <P><STRONG><a name="[d]"></a>WDT_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_lpc17xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
-<P><STRONG><a name="[5e]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_lpc17xx.o(.text))
+<P><STRONG><a name="[65]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_lpc17xx.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[3b]"></a>main</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, sample.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = main &rArr; init_timer &rArr; __NVIC_SetPriority
+<P><STRONG><a name="[41]"></a>game_init</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, sample.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = game_init &rArr; init_timer &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_timer
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_RIT
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_init
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_init
-<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_timer
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_RIT
+<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_init
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_init
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[3b]"></a>main</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, sample.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = main &rArr; game_init &rArr; init_timer &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;game_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[48]"></a>LED_On</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, funct_led.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
+<P><STRONG><a name="[49]"></a>LED_On</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, funct_led.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
 </UL>
 
-<P><STRONG><a name="[49]"></a>LED_Off</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, funct_led.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
+<P><STRONG><a name="[4a]"></a>LED_Off</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, funct_led.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
 <LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER0_IRQHandler
-<LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button1_RIT
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
 </UL>
 
-<P><STRONG><a name="[47]"></a>LED_Out</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, funct_led.o(.text))
+<P><STRONG><a name="[48]"></a>LED_Out</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, funct_led.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LED_Out
 </UL>
-<BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
+<BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
-<LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-</UL>
-
-<P><STRONG><a name="[42]"></a>LED_init</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, lib_led.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;first_setup
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[83]"></a>LED_deinit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_led.o(.text), UNUSED)
+<P><STRONG><a name="[43]"></a>LED_init</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, lib_led.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;game_init
+</UL>
 
-<P><STRONG><a name="[84]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[8a]"></a>LED_deinit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_led.o(.text), UNUSED)
 
-<P><STRONG><a name="[85]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[8b]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[86]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[8c]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+
+<P><STRONG><a name="[8d]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[3c]"></a>exit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, exit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = exit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
+<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[87]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[8e]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[5d]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
+<P><STRONG><a name="[64]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[88]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[8f]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[40]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
-</UL>
+<P><STRONG><a name="[90]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[89]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[91]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[8a]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[92]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[8b]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[41]"></a>SystemInit</STRONG> (Thumb, 552 bytes, Stack size 0 bytes, system_lpc17xx.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[42]"></a>SystemInit</STRONG> (Thumb, 552 bytes, Stack size 0 bytes, system_lpc17xx.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;game_init
 </UL>
 
 <P><STRONG><a name="[1f]"></a>EINT0_IRQHandler</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, irq_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EINT0_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[20]"></a>EINT1_IRQHandler</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, irq_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EINT1_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[21]"></a>EINT2_IRQHandler</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, irq_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EINT2_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
-<P><STRONG><a name="[43]"></a>BUTTON_init</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, lib_button.o(.text))
+<P><STRONG><a name="[44]"></a>BUTTON_init</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, lib_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = BUTTON_init &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;game_init
 </UL>
 
-<P><STRONG><a name="[4b]"></a>enable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+<P><STRONG><a name="[4c]"></a>enable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button1_RIT
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button0_RIT
 <LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EINT2_IRQHandler
 <LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EINT1_IRQHandler
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EINT0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[57]"></a>disable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+<P><STRONG><a name="[61]"></a>disable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button1_RIT
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button0_RIT
 </UL>
 
-<P><STRONG><a name="[54]"></a>reset_RIT</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, lib_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+<P><STRONG><a name="[60]"></a>reset_RIT</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, lib_rit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button1_RIT
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button0_RIT
 </UL>
 
-<P><STRONG><a name="[45]"></a>init_RIT</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, lib_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[46]"></a>init_RIT</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, lib_rit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;game_init
 </UL>
 
-<P><STRONG><a name="[4f]"></a>accendi_direzione</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, irq_rit.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = accendi_direzione
+<P><STRONG><a name="[2a]"></a>RIT_IRQHandler</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, irq_rit.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = RIT_IRQHandler &rArr; button2_RIT &rArr; accendi_led &rArr; accendi_direzione
 </UL>
-<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
-</UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
-</UL>
-
-<P><STRONG><a name="[50]"></a>accendi_led</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, irq_rit.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = accendi_led &rArr; accendi_direzione
-</UL>
-<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_timer
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
-</UL>
-<BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-</UL>
-
-<P><STRONG><a name="[58]"></a>calcola_distanza</STRONG> (Thumb, 356 bytes, Stack size 20 bytes, irq_rit.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = calcola_distanza
-</UL>
-<BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-</UL>
-
-<P><STRONG><a name="[59]"></a>muovi</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, irq_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-</UL>
-
-<P><STRONG><a name="[2a]"></a>RIT_IRQHandler</STRONG> (Thumb, 850 bytes, Stack size 8 bytes, irq_rit.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = RIT_IRQHandler &rArr; accendi_led &rArr; accendi_direzione
-</UL>
-<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_timer
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button1_RIT
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button0_RIT
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[e]"></a>TIMER0_IRQHandler</STRONG> (Thumb, 146 bytes, Stack size 8 bytes, irq_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TIMER0_IRQHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
+<BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
 <P><STRONG><a name="[f]"></a>TIMER1_IRQHandler</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, irq_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIMER1_IRQHandler &rArr; LED_Out
 </UL>
-<BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_lpc17xx.o(RESET)
 </UL>
-<P><STRONG><a name="[52]"></a>enable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<P><STRONG><a name="[58]"></a>enable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;first_setup
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
 </UL>
 
-<P><STRONG><a name="[53]"></a>disable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<P><STRONG><a name="[59]"></a>disable_timer</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, lib_timer.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;first_setup
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
 </UL>
 
-<P><STRONG><a name="[51]"></a>reset_timer</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lib_timer.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<P><STRONG><a name="[57]"></a>reset_timer</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, lib_timer.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;first_setup
+<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
 </UL>
 
-<P><STRONG><a name="[46]"></a>init_timer</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, lib_timer.o(.text))
+<P><STRONG><a name="[47]"></a>init_timer</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, lib_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = init_timer &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;game_init
+</UL>
+
+<P><STRONG><a name="[62]"></a>calcola_distanza</STRONG> (Thumb, 346 bytes, Stack size 12 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = calcola_distanza
+</UL>
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button1_RIT
+</UL>
+
+<P><STRONG><a name="[55]"></a>accendi_direzione</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = accendi_direzione
+</UL>
+<BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_On
+</UL>
+<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+</UL>
+
+<P><STRONG><a name="[63]"></a>muovi</STRONG> (Thumb, 100 bytes, Stack size 0 bytes, gioco.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+</UL>
+
+<P><STRONG><a name="[56]"></a>accendi_led</STRONG> (Thumb, 218 bytes, Stack size 8 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = accendi_led &rArr; accendi_direzione
+</UL>
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_direzione
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_timer
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
+</UL>
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button1_RIT
+</UL>
+
+<P><STRONG><a name="[5a]"></a>clear_button</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = clear_button
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;first_setup
+</UL>
+
+<P><STRONG><a name="[5d]"></a>win</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = win
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_timer
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
+</UL>
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+</UL>
+
+<P><STRONG><a name="[5f]"></a>first_setup</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = first_setup &rArr; clear_button
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_button
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_timer
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Out
+</UL>
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button0_RIT
+</UL>
+
+<P><STRONG><a name="[50]"></a>button0_RIT</STRONG> (Thumb, 160 bytes, Stack size 8 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = button0_RIT &rArr; first_setup &rArr; clear_button
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;first_setup
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+</UL>
+
+<P><STRONG><a name="[51]"></a>button1_RIT</STRONG> (Thumb, 150 bytes, Stack size 8 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = button1_RIT &rArr; accendi_led &rArr; accendi_direzione
+</UL>
+<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+</UL>
+
+<P><STRONG><a name="[52]"></a>button2_RIT</STRONG> (Thumb, 266 bytes, Stack size 8 bytes, gioco.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = button2_RIT &rArr; accendi_led &rArr; accendi_direzione
+</UL>
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accendi_led
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;muovi
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calcola_distanza
+<LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_timer
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_timer
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_timer
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_RIT
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disable_RIT
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_RIT
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
 <P><STRONG><a name="[37]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
+<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
 </UL>
 <BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
+</UL>
+
+<P><STRONG><a name="[40]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[44]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, sample.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<P><STRONG><a name="[45]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, sample.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;game_init
 </UL>
 
-<P><STRONG><a name="[4c]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, irq_button.o(.text))
+<P><STRONG><a name="[4d]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, irq_button.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EINT2_IRQHandler
 <LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EINT1_IRQHandler
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EINT0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[4d]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lib_button.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_init
+<P><STRONG><a name="[4e]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lib_button.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_init
 </UL>
 
-<P><STRONG><a name="[4e]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lib_button.o(.text))
+<P><STRONG><a name="[4f]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lib_button.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_init
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_init
 </UL>
 
-<P><STRONG><a name="[56]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, irq_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
+<P><STRONG><a name="[53]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lib_timer.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_timer
 </UL>
 
-<P><STRONG><a name="[5a]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, irq_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-</UL>
-
-<P><STRONG><a name="[55]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, irq_rit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
-</UL>
-
-<P><STRONG><a name="[5b]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, lib_timer.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_timer
-</UL>
-
-<P><STRONG><a name="[5c]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lib_timer.o(.text))
+<P><STRONG><a name="[54]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, lib_timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_timer
+<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_timer
+</UL>
+
+<P><STRONG><a name="[5c]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, gioco.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_button
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button1_RIT
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button0_RIT
+</UL>
+
+<P><STRONG><a name="[5e]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, gioco.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;win
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
+</UL>
+
+<P><STRONG><a name="[5b]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, gioco.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clear_button
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;button2_RIT
 </UL>
 <P>
 <H3>
